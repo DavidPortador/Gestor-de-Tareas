@@ -16,4 +16,21 @@ export default class Model {
         this.currentId = this.todos[this.todos.length - 1].id + 1;
       }
     }
+    
+  setView(view) {
+    this.view = view;
+  }
+
+  getTodos() {
+    return this.todos.map((todo) => ({...todo}));
+  }
+
+  addTodo(title, description) {
+    const todo = {
+      id: this.currentId++,
+      title,
+      description,
+      completed: false,
+    }
+  }
 }
